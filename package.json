@@ -1,0 +1,16 @@
+{
+  "name": "vue-eleme-table",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "cooking watch -p"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "cooking": "^1.5.4",
+    "element-ui": "^2.0.7"
+  }
+}
