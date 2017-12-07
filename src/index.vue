@@ -50,7 +50,7 @@
                     <el-row>
                         <el-radio class="long" v-model="second.cronEvery" label="3">具体秒数(可多选)
                             <el-select size="small" multiple v-model="second.specificSpecific">
-                                <el-option v-for="val in 60" :value="val-1">{{val-1}}</el-option>
+                                <el-option v-for="val in 60" :key="$index" :value="val-1">{{val-1}}</el-option>
                             </el-select>
                         </el-radio>
                     </el-row>
@@ -81,7 +81,7 @@
                     <el-row>
                         <el-radio class="long" v-model="minute.cronEvery" label="3">具体分钟数(可多选)
                             <el-select size="small" multiple v-model="minute.specificSpecific">
-                                <el-option v-for="val in 60" :value="val-1">{{val-1}}</el-option>
+                                <el-option v-for="val in 60" :key="$index" :value="val-1">{{val-1}}</el-option>
                             </el-select>
                         </el-radio>
                     </el-row>
@@ -112,7 +112,7 @@
                     <el-row>
                         <el-radio class="long" v-model="hour.cronEvery" label="3">具体小时数(可多选)
                             <el-select size="small" multiple v-model="hour.specificSpecific">
-                                <el-option v-for="val in 24" :value="val-1">{{val-1}}</el-option>
+                                <el-option v-for="val in 24" :key="$index" :value="val-1">{{val-1}}</el-option>
                             </el-select>
                         </el-radio>
                     </el-row>
@@ -137,7 +137,7 @@
                             <el-input-number size="small" v-model="week.incrementIncrement" :min="1" :max="7"></el-input-number>
                             天执行&nbsp;从
                             <el-select size="small" v-model="week.incrementStart">
-                                <el-option v-for="val in 7" :label="'星期'+['天','一','二','三','四','五','六'][val-1]" :value="val"></el-option>
+                                <el-option v-for="val in 7" :key="$index" :label="'星期'+['天','一','二','三','四','五','六'][val-1]" :value="val"></el-option>
                             </el-select>
                             天开始
                         </el-radio>
@@ -153,14 +153,14 @@
                     <el-row>
                         <el-radio class="long" v-model="day.cronEvery" label="4">具体星期几(可多选)
                             <el-select size="small" multiple v-model="week.specificSpecific">
-                                <el-option v-for="val in 7" :label="'星期'+['天','一','二','三','四','五','六'][val-1]" :value="val"></el-option>
+                                <el-option v-for="val in 7" :key="$index" :label="'星期'+['天','一','二','三','四','五','六'][val-1]" :value="val"></el-option>
                             </el-select>
                         </el-radio>
                     </el-row>
                     <el-row>
                         <el-radio class="long" v-model="day.cronEvery" label="5">具体天数(可多选)
                             <el-select size="small" multiple v-model="day.specificSpecific">
-                                <el-option v-for="val in 31" :value="val">{{val}}</el-option>
+                                <el-option v-for="val in 31" :key="$index" :value="val">{{val}}</el-option>
                             </el-select>
                         </el-radio>
                     </el-row>
@@ -173,7 +173,7 @@
                     <el-row>
                         <el-radio v-model="day.cronEvery" label="8">在这个月的最后一个
                             <el-select size="small" v-model="day.cronLastSpecificDomDay">
-                                <el-option v-for="val in 7" :label="'星期'+['天','一','二','三','四','五','六'][val-1]" :value="val"></el-option>
+                                <el-option v-for="val in 7" :key="$index" :label="'星期'+['天','一','二','三','四','五','六'][val-1]" :value="val"></el-option>
                             </el-select>
                         </el-radio>
                     </el-row>
@@ -194,7 +194,7 @@
                             <el-input-number size="small" v-model="week.cronNthDayNth" :min="1" :max="5"></el-input-number>
                             个
                             <el-select size="small" v-model="week.cronNthDayDay">
-                                <el-option v-for="val in 7" :label="'星期'+['天','一','二','三','四','五','六'][val-1]" :value="val"></el-option>
+                                <el-option v-for="val in 7" :key="$index" :label="'星期'+['天','一','二','三','四','五','六'][val-1]" :value="val"></el-option>
                             </el-select>
                         </el-radio>
                     </el-row>
@@ -217,7 +217,7 @@
                     <el-row>
                         <el-radio class="long" v-model="month.cronEvery" label="3">具体月份(可多选)
                             <el-select size="small" multiple v-model="month.specificSpecific">
-                                <el-option v-for="val in 12" :label="val+'月'" :value="val"></el-option>
+                                <el-option v-for="val in 12" :key="$index" :label="val+'月'" :value="val"></el-option>
                             </el-select>
                         </el-radio>
                     </el-row>
@@ -248,7 +248,7 @@
                     <el-row>
                         <el-radio class="long" v-model="year.cronEvery" label="3">具体年份(可多选)
                             <el-select size="small" filterable multiple v-model="year.specificSpecific">
-                                <el-option v-for="val in 100" :label="2016+val+'年'" :value="2016+val"></el-option>
+                                <el-option v-for="val in 100" :key="$index" :label="2016+val+'年'" :value="2016+val"></el-option>
                             </el-select>
                         </el-radio>
                     </el-row>
@@ -271,6 +271,7 @@
     </div>
 </template>
 <script> export default {
+    name:'vueCron',
     props:['data'],
     data(){
         return {

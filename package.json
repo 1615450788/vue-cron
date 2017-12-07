@@ -4,13 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "cooking watch -p"
+    "dev": "cooking watch -p -c /config/cooking.dev.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {},
   "devDependencies": {
+    "babel-polyfill": "^6.26.0",
     "cooking": "^1.5.4",
-    "element-ui": "^2.0.7"
+    "cooking-autoprefixer": "^1.0.0",
+    "cooking-cli": "^1.5.5",
+    "cooking-less": "^1.0.5",
+    "cooking-vue2": "^0.3.3",
+    "element-ui": "^2.0.7",
+    "vue": "^2.5.9",
+    "vue-template-compiler": "^2.5.9"
   }
 }

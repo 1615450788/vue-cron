@@ -1,13 +1,8 @@
-import Vue from 'vue';
-import ElementUI from 'element-ui';
 import vueCron from './index.vue';
 
-Vue.use(ElementUI);
+export default {
+    install(Vue){
+        Vue.components(vueCron.name,vueCron)
+    }
+}
 
-Vue.config.devtools = false;
-
-const app = new Vue({
-    el: '#app',
-    template: '<vue-cron/>',
-    components: { vueCron }
-});

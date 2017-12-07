@@ -1,6 +1,6 @@
 var path = require('path');
 var cooking = require('cooking');
-var packageConfig = require('./package.json');
+var packageConfig = require('../package.json');
 
 var isProd = process.env.NODE_ENV === 'production';
 
@@ -13,7 +13,7 @@ cooking.set({
         {
             title: packageConfig.description,
             filename: 'index.html',
-            template: '/text/index.tpl',
+            template: './test/index.tpl',
             // favicon:'./src/static/img/favicon.ico',
             // chunks: ['vendor', 'manifest', 'asd']
         }
@@ -35,7 +35,9 @@ cooking.set({
     urlLoaderLimit: 204800,
     extractCSS: false,
     externals: {},
-    alias: {},
+    alias: {
+        'vue': 'vue/dist/vue.min',
+    },
     extends: ['vue2', 'less', 'autoprefixer']
 });
 
