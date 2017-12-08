@@ -21,7 +21,11 @@ cooking.set({
     devServer: {
         port: 8001,
         publicPath: '/',
-        proxy: {}
+        proxy: {
+            '/': {
+                target: 'http://192.168.11.60',
+            }
+        }
     },
     clean: true,
     hash: true,

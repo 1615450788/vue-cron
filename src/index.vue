@@ -153,7 +153,11 @@
                     <el-row>
                         <el-radio class="long" v-model="day.cronEvery" label="4">具体星期几(可多选)
                             <el-select size="small" multiple v-model="week.specificSpecific">
-                                <el-option v-for="val in 7" :key="$index" :label="'星期'+['天','一','二','三','四','五','六'][val-1]" :value="val"></el-option>
+                                <el-option v-for="val in 7"
+                                           :key="$index"
+                                           :label="'星期'+['天','一','二','三','四','五','六'][val-1]"
+                                           :value="['SUN','MON','TUE','WED','THU','FRI','SAT'][val-1]"
+                                ></el-option>
                             </el-select>
                         </el-radio>
                     </el-row>
@@ -461,7 +465,7 @@
                 case '1':
                 case '3':
                 case '5':
-                    weeks = '*';
+                    weeks = '?';
                     break;
                 case '2':
                     weeks = this.week.incrementStart+'/'+this.week.incrementIncrement;
@@ -530,7 +534,7 @@
             return years;
         },
         cron(){
-            return `${this.secondsText||'*'} ${this.minutesText||'*'} ${this.hoursText||'*'} ${this.daysText||'?'} ${this.monthsText||'*'} ${this.weeksText||'*'} ${this.yearsText||'*'}`
+            return `${this.secondsText||'*'} ${this.minutesText||'*'} ${this.hoursText||'*'} ${this.daysText||'*'} ${this.monthsText||'*'} ${this.weeksText||'?'} ${this.yearsText||'*'}`
         },
     },
     methods: {
