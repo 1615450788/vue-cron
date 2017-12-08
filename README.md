@@ -1,6 +1,6 @@
 # vue-cron
 这是一个cron表达式生成插件,基于vue与element-ui实现
-[demo](https://1615450788.github.io/vue-cron/docs/index)
+[demo](https://1615450788.github.io/vue-cron/dist/index)
 
 
 ## 依赖
