@@ -5,7 +5,7 @@
 <template>
     <div>
         <el-popover v-model="cronPopover" placement="right">
-            <Vue-Cron :data="cron" @change="changeCron" @close="cronPopover=false"></Vue-Cron>
+            <cron :data="cron" @change="changeCron" @close="cronPopover=false"></cron>
             <el-input slot="reference" @click="cronPopover=true" v-model="cron" placeholder="请输入定时策略"></el-input>
         </el-popover>
 
@@ -13,7 +13,7 @@
 </template>
 
 <script>
-    import VueCron from '../src/index.vue';
+    import {cron} from '../build/cron.min';
 
     export default {
         data(){
@@ -22,7 +22,7 @@
                 cron:''
             }
         },
-        components: { VueCron },
+        components: { cron },
         computed: {},
         methods: {
             changeCron(val){

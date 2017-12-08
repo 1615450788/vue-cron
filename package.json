@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "cooking watch -p -c /config/cooking.dev.js"
+    "dev": "cooking watch -p -c /config/cooking.dev.js",
+    "build": "cooking build -p -c /config/cooking.build.js",
+    "npm": "npm run build && git add . && git commit -m build&& npm version patch && cnpm publish && git push"
   },
   "author": "",
   "license": "ISC",
@@ -18,6 +20,7 @@
     "cooking-vue2": "^0.3.3",
     "element-ui": "^2.0.7",
     "vue": "^2.5.9",
-    "vue-template-compiler": "^2.5.9"
+    "vue-template-compiler": "^2.5.9",
+    "webpack-node-externals": "^1.6.0"
   }
 }
