@@ -20,9 +20,7 @@ cooking.set({
     alias: {
     },
     extractCSS: false,//'[name].[contenthash:7].css'
-    externals: [{
-        'frame':'@project/frame'
-    }, nodeExternals()],
+    externals: [ nodeExternals()],
     extends: ['vue2','less']//lint
 });
 

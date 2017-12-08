@@ -29,7 +29,7 @@ cooking.set({
     },
     clean: true,
     hash: true,
-    sourceMap: true,
+    sourceMap: !isProd,
     minimize: true,
     chunk: false,
     postcss: [

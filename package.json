@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "cooking watch -p -c /config/cooking.dev.js",
+    "dist": "cooking build -p -c /config/cooking.dev.js",
     "build": "cooking build -p -c /config/cooking.build.js",
     "npm": "npm run build && git add . && git commit -m build&& npm version patch && cnpm publish && git push"
   },
