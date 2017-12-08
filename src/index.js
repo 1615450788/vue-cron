@@ -1,6 +1,6 @@
 import vueCron from './index.vue';
 
-export let vueCron=vueCron;
+export let cron=vueCron;
 
 export default {
     install(Vue){
