@@ -18,7 +18,7 @@ npm install vue-cron
 import Vue from 'vue'
 import VueCron from 'vue-cron'
 
-Vue.use(VueCron)
+Vue.use(VueCron);
 
 //局部引入
 import {cron} from 'vue-cron'
@@ -29,6 +29,39 @@ export default {
 }
 ```
 
+## 示例
+```vue
+<template>
+    <div class="cron">
+        <h1>vue-cron</h1>
+        <el-popover v-model="cronPopover">
+            <cron @change="changeCron" @close="cronPopover=false"></cron>
+            <el-input slot="reference" @click="cronPopover=true" v-model="cron" placeholder="请输入定时策略"></el-input>
+        </el-popover>
+    </div>
+</template>
+
+<script>
+    import {cron} from 'vue-cron';
+
+    export default {
+        components: { cron },
+        data(){
+            return {
+                cronPopover:false,
+                cron:''
+            }
+        },
+        methods: {
+            changeCron(val){
+                this.cron=val
+            },
+        },
+    }
+</script>
+```
+
+在示例中我使用了es6(es2015)语法,你可能需要引入babel-polyfill才能正常运行,或者你也可以用es5的写法
 
 ## 事件
 - change(cronText)
@@ -36,3 +69,9 @@ export default {
 
 ## 大小
 - 27k
+
+## 联系方式
+
+邮箱 : 1615450788@qq.com
+
+有任何问题请发Issues或者邮箱联系我-.-  谢谢!
