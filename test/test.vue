@@ -22,7 +22,7 @@
 </template>
 
 <script>
-    import {cron} from '../build/cron.min';
+    import {cron} from '../src/index';
 
     export default {
         data(){
