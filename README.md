@@ -65,11 +65,16 @@ export default {
 
 ## 事件
 - change(cronText)
-    - 参数：`{String} cronText` cron表达式的值
-当corn表达式的值发生变化变化时触发
+
+    - 参数：`{String} cronText` cron表达式的值
+    
+    当corn表达式的值发生变化变化时触发
+    
 - close()
-    - 参数：无
-当点击corn表达式选择框取消按钮时触发
+
+    - 参数：无
+    
+    当点击corn表达式选择框取消按钮时触发
 
 ## 大小
 - 27k
