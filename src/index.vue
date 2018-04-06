@@ -206,7 +206,7 @@
                     </el-row>
                     <el-row>
                         <el-radio v-model="month.cronEvery" label="2">Every
-                            <el-input-number size="small" v-model="month.incrementIncrement" :min="0" :max="23"></el-input-number>
+                            <el-input-number size="small" v-model="month.incrementIncrement" :min="0" :max="12"></el-input-number>
                             month(s) starting in
                             <el-input-number size="small" v-model="month.incrementStart" :min="0" :max="12"></el-input-number>
                         </el-radio>
@@ -220,7 +220,7 @@
                     </el-row>
                     <el-row>
                         <el-radio v-model="month.cronEvery" label="4">Every month between
-                            <el-input-number size="small" v-model="month.rangeStart" :min="1" :max="12"></el-input-number>月
+                            <el-input-number size="small" v-model="month.rangeStart" :min="1" :max="12"></el-input-number>
                             and
                             <el-input-number size="small" v-model="month.rangeEnd" :min="1" :max="12"></el-input-number>
                         </el-radio>
@@ -231,36 +231,34 @@
                 <span slot="label"><i class="el-icon-date"></i> Year</span>
                 <div class="tabBody">
                     <el-row>
-                        <el-radio v-model="year.cronEvery" label="1">每年</el-radio>
+                        <el-radio v-model="year.cronEvery" label="1">Any year</el-radio>
                     </el-row>
                     <el-row>
-                        <el-radio v-model="year.cronEvery" label="2">每隔
+                        <el-radio v-model="year.cronEvery" label="2">Every
                             <el-input-number size="small" v-model="year.incrementIncrement" :min="1" :max="99"></el-input-number>
-                            年执行&nbsp;从
-                            <el-input-number size="small" v-model="year.incrementStart" :min="2017" :max="2117"></el-input-number>
-                            年开始
+                            year(s) starting in
+                            <el-input-number size="small" v-model="year.incrementStart" :min="2018" :max="2118"></el-input-number>
                         </el-radio>
                     </el-row>
                     <el-row>
-                        <el-radio class="long" v-model="year.cronEvery" label="3">具体年份(可多选)
+                        <el-radio class="long" v-model="year.cronEvery" label="3">Specific year (choose one or many)
                             <el-select size="small" filterable multiple v-model="year.specificSpecific">
-                                <el-option v-for="val in 100" :key="$index" :label="2016+val+'年'" :value="2016+val"></el-option>
+                                <el-option v-for="val in 100" :key="$index" :label="2017+val" :value="2017+val"></el-option>
                             </el-select>
                         </el-radio>
                     </el-row>
                     <el-row>
-                        <el-radio v-model="year.cronEvery" label="4">从
-                            <el-input-number size="small" v-model="year.rangeStart"  :min="2017" :max="2117"></el-input-number>年
-                            到
-                            <el-input-number size="small" v-model="year.rangeEnd"  :min="2017" :max="2117"></el-input-number>
-                            年之间的每个年
+                        <el-radio v-model="year.cronEvery" label="4">Every year between
+                            <el-input-number size="small" v-model="year.rangeStart"  :min="2018" :max="2118"></el-input-number>
+                            and
+                            <el-input-number size="small" v-model="year.rangeEnd"  :min="2018" :max="2118"></el-input-number>
                         </el-radio>
                     </el-row>
                 </div>
             </el-tab-pane>
         </el-tabs>
         <div class="btnList">
-            <span class="value">{{this.cron}}</span>&nbsp;&nbsp;
+            <span class="value">{{this.cron}}</span>
             <el-button type="primary" @click="change">Save</el-button>
             <el-button type="primary" @click="close">Close</el-button>
         </div>
