@@ -212,9 +212,9 @@
                     </el-row>
                     <el-row>
                         <el-radio v-model="month.cronEvery" label="2">每隔
-                            <el-input-number size="small" v-model="month.incrementIncrement" :min="0" :max="23"></el-input-number>
+                            <el-input-number size="small" v-model="month.incrementIncrement" :min="0" :max="12"></el-input-number>
                             月执行&nbsp;从
-                            <el-input-number size="small" v-model="month.incrementStart" :min="0" :max="23"></el-input-number>
+                            <el-input-number size="small" v-model="month.incrementStart" :min="0" :max="12"></el-input-number>
                             月开始
                         </el-radio>
                     </el-row>
