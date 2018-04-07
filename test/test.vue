@@ -15,7 +15,7 @@
         <h1>vue-cron</h1>
         <el-popover v-model="cronPopover">
             <cron :data="cron" @change="changeCron" @close="cronPopover=false"></cron>
-            <el-input slot="reference" @click="cronPopover=true" v-model="cron" placeholder="请输入定时策略"></el-input>
+            <el-input slot="reference" @click="cronPopover=true" v-model="cron" placeholder="* * * * * ? *"></el-input>
         </el-popover>
 
     </div>

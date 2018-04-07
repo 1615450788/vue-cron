@@ -34,243 +34,233 @@
     <div id="changeContab">
         <el-tabs type="border-card">
             <el-tab-pane>
-                <span slot="label"><i class="el-icon-date"></i> 秒</span>
+                <span slot="label"><i class="el-icon-date"></i> Seconds</span>
                 <div class="tabBody">
                     <el-row>
-                        <el-radio v-model="second.cronEvery" label="1">每一秒钟</el-radio>
+                        <el-radio v-model="second.cronEvery" label="1">Every second</el-radio>
                     </el-row>
                     <el-row>
-                        <el-radio v-model="second.cronEvery" label="2">每隔
+                        <el-radio v-model="second.cronEvery" label="2">Every
                             <el-input-number size="small" v-model="second.incrementIncrement" :min="1" :max="60"></el-input-number>
-                            秒执行&nbsp;从
+                            second(s) starting at second
                             <el-input-number size="small" v-model="second.incrementStart" :min="0" :max="59"></el-input-number>
-                            秒开始
                         </el-radio>
                     </el-row>
                     <el-row>
-                        <el-radio class="long" v-model="second.cronEvery" label="3">具体秒数(可多选)
+                        <el-radio class="long" v-model="second.cronEvery" label="3">Specific second (choose one or many)
                             <el-select size="small" multiple v-model="second.specificSpecific">
                                 <el-option v-for="val in 60" :key="$index" :value="val-1">{{val-1}}</el-option>
                             </el-select>
                         </el-radio>
                     </el-row>
                     <el-row>
-                        <el-radio v-model="second.cronEvery" label="4">周期从
+                        <el-radio v-model="second.cronEvery" label="4">Every second between second
                             <el-input-number size="small" v-model="second.rangeStart" :min="1" :max="60"></el-input-number>
-                            到
+                            and second
                             <el-input-number size="small" v-model="second.rangeEnd" :min="0" :max="59"></el-input-number>
-                            秒
                         </el-radio>
                     </el-row>
                 </div>
             </el-tab-pane>
             <el-tab-pane>
-                <span slot="label"><i class="el-icon-date"></i> 分</span>
+                <span slot="label"><i class="el-icon-date"></i> Minutes</span>
                 <div class="tabBody">
                     <el-row>
-                        <el-radio v-model="minute.cronEvery" label="1">每一分钟</el-radio>
+                        <el-radio v-model="minute.cronEvery" label="1">Every minute</el-radio>
                     </el-row>
                     <el-row>
-                        <el-radio v-model="minute.cronEvery" label="2">每隔
+                        <el-radio v-model="minute.cronEvery" label="2">Every
                             <el-input-number size="small" v-model="minute.incrementIncrement" :min="1" :max="60"></el-input-number>
-                            分执行&nbsp;从
+                            minute(s) starting at minute
                             <el-input-number size="small" v-model="minute.incrementStart" :min="0" :max="59"></el-input-number>
-                            分开始
                         </el-radio>
                     </el-row>
                     <el-row>
-                        <el-radio class="long" v-model="minute.cronEvery" label="3">具体分钟数(可多选)
+                        <el-radio class="long" v-model="minute.cronEvery" label="3">Specific minute (choose one or many)
                             <el-select size="small" multiple v-model="minute.specificSpecific">
                                 <el-option v-for="val in 60" :key="$index" :value="val-1">{{val-1}}</el-option>
                             </el-select>
                         </el-radio>
                     </el-row>
                     <el-row>
-                        <el-radio v-model="minute.cronEvery" label="4">周期从
+                        <el-radio v-model="minute.cronEvery" label="4">Every minute between minute
                             <el-input-number size="small" v-model="minute.rangeStart" :min="1" :max="60"></el-input-number>
-                            到
+                            and minute
                             <el-input-number size="small" v-model="minute.rangeEnd" :min="0" :max="59"></el-input-number>
-                            分
                         </el-radio>
                     </el-row>
                 </div>
             </el-tab-pane>
             <el-tab-pane>
-                <span slot="label"><i class="el-icon-date"></i> 时</span>
+                <span slot="label"><i class="el-icon-date"></i> Hours</span>
                 <div class="tabBody">
                     <el-row>
-                        <el-radio v-model="hour.cronEvery" label="1">每一小时</el-radio>
+                        <el-radio v-model="hour.cronEvery" label="1">Every hour</el-radio>
                     </el-row>
                     <el-row>
-                        <el-radio v-model="hour.cronEvery" label="2">每隔
+                        <el-radio v-model="hour.cronEvery" label="2">Every
                             <el-input-number size="small" v-model="hour.incrementIncrement" :min="0" :max="23"></el-input-number>
-                            小时执行&nbsp;从
+                            hour(s) starting at hour
                             <el-input-number size="small" v-model="hour.incrementStart" :min="0" :max="23"></el-input-number>
-                            小时开始
                         </el-radio>
                     </el-row>
                     <el-row>
-                        <el-radio class="long" v-model="hour.cronEvery" label="3">具体小时数(可多选)
+                        <el-radio class="long" v-model="hour.cronEvery" label="3">Specific hour (choose one or many)
                             <el-select size="small" multiple v-model="hour.specificSpecific">
                                 <el-option v-for="val in 24" :key="$index" :value="val-1">{{val-1}}</el-option>
                             </el-select>
                         </el-radio>
                     </el-row>
                     <el-row>
-                        <el-radio v-model="hour.cronEvery" label="4">周期从
+                        <el-radio v-model="hour.cronEvery" label="4">Every hour between hour
                             <el-input-number size="small" v-model="hour.rangeStart" :min="0" :max="23"></el-input-number>
-                            到
+                            and hour
                             <el-input-number size="small" v-model="hour.rangeEnd" :min="0" :max="23"></el-input-number>
-                            小时
                         </el-radio>
                     </el-row>
                 </div>
             </el-tab-pane>
             <el-tab-pane>
-                <span slot="label"><i class="el-icon-date"></i> 天</span>
+                <span slot="label"><i class="el-icon-date"></i> Day</span>
                 <div class="tabBody">
                     <el-row>
-                        <el-radio v-model="day.cronEvery" label="1">每一天</el-radio>
+                        <el-radio v-model="day.cronEvery" label="1">Every day</el-radio>
                     </el-row>
                     <el-row>
-                        <el-radio v-model="day.cronEvery" label="2">每隔
+                        <el-radio v-model="day.cronEvery" label="2">Every
                             <el-input-number size="small" v-model="week.incrementIncrement" :min="1" :max="7"></el-input-number>
-                            天执行&nbsp;从
+                            day(s) starting on
                             <el-select size="small" v-model="week.incrementStart">
-                                <el-option v-for="val in 7" :key="$index" :label="'星期'+['天','一','二','三','四','五','六'][val-1]" :value="val"></el-option>
+                                <el-option v-for="val in 7" :key="$index" :label="['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][val-1]" :value="val"></el-option>
                             </el-select>
-                            天开始
                         </el-radio>
                     </el-row>
                     <el-row>
-                        <el-radio v-model="day.cronEvery" label="3">每隔
+                        <el-radio v-model="day.cronEvery" label="3">Every
                             <el-input-number size="small" v-model="day.incrementIncrement" :min="1" :max="31"></el-input-number>
-                            天执行&nbsp;从
+                            day(s) starting at the
                             <el-input-number size="small" v-model="day.incrementStart" :min="1" :max="31"></el-input-number>
-                            天开始
+                            of the month
                         </el-radio>
                     </el-row>
                     <el-row>
-                        <el-radio class="long" v-model="day.cronEvery" label="4">具体星期几(可多选)
+                        <el-radio class="long" v-model="day.cronEvery" label="4">Specific day of week (choose one or many)
                             <el-select size="small" multiple v-model="week.specificSpecific">
                                 <el-option v-for="val in 7"
                                            :key="$index"
-                                           :label="'星期'+['天','一','二','三','四','五','六'][val-1]"
+                                           :label="['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][val-1]"
                                            :value="['SUN','MON','TUE','WED','THU','FRI','SAT'][val-1]"
                                 ></el-option>
                             </el-select>
                         </el-radio>
                     </el-row>
                     <el-row>
-                        <el-radio class="long" v-model="day.cronEvery" label="5">具体天数(可多选)
+                        <el-radio class="long" v-model="day.cronEvery" label="5">Specific day of month (choose one or many)
                             <el-select size="small" multiple v-model="day.specificSpecific">
                                 <el-option v-for="val in 31" :key="$index" :value="val">{{val}}</el-option>
                             </el-select>
                         </el-radio>
                     </el-row>
                     <el-row>
-                        <el-radio v-model="day.cronEvery" label="6">在这个月的最后一天</el-radio>
+                        <el-radio v-model="day.cronEvery" label="6">On the last day of the month</el-radio>
                     </el-row>
                     <el-row>
-                        <el-radio v-model="day.cronEvery" label="7">在这个月的最后一个工作日</el-radio>
+                        <el-radio v-model="day.cronEvery" label="7">On the last weekday of the month</el-radio>
                     </el-row>
                     <el-row>
-                        <el-radio v-model="day.cronEvery" label="8">在这个月的最后一个
+                        <el-radio v-model="day.cronEvery" label="8">On the last
                             <el-select size="small" v-model="day.cronLastSpecificDomDay">
-                                <el-option v-for="val in 7" :key="$index" :label="'星期'+['天','一','二','三','四','五','六'][val-1]" :value="val"></el-option>
+                                <el-option v-for="val in 7" :key="$index" :label="['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][val-1]" :value="val"></el-option>
                             </el-select>
+                            of the month
                         </el-radio>
                     </el-row>
                     <el-row>
-                        <el-radio v-model="day.cronEvery" label="9">在本月底前
+                        <el-radio v-model="day.cronEvery" label="9">
                             <el-input-number size="small" v-model="day.cronDaysBeforeEomMinus" :min="1" :max="31"></el-input-number>
-                            天
+                            day(s) before the end of the month
                         </el-radio>
                     </el-row>
                     <el-row>
-                        <el-radio v-model="day.cronEvery" label="10">最近的工作日（周一至周五）至本月
+                        <el-radio v-model="day.cronEvery" label="10">Nearest weekday (Monday to Friday) to the
                             <el-input-number size="small" v-model="day.cronDaysNearestWeekday" :min="1" :max="31"></el-input-number>
-                            日
+                            of the month
                         </el-radio>
                     </el-row>
                     <el-row>
-                        <el-radio v-model="day.cronEvery" label="11">在这个月的第
+                        <el-radio v-model="day.cronEvery" label="11">On the
                             <el-input-number size="small" v-model="week.cronNthDayNth" :min="1" :max="5"></el-input-number>
-                            个
                             <el-select size="small" v-model="week.cronNthDayDay">
-                                <el-option v-for="val in 7" :key="$index" :label="'星期'+['天','一','二','三','四','五','六'][val-1]" :value="val"></el-option>
+                                <el-option v-for="val in 7" :key="$index" :label="['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][val-1]" :value="val"></el-option>
                             </el-select>
+                            of the month
                         </el-radio>
                     </el-row>
                 </div>
             </el-tab-pane>
             <el-tab-pane>
-                <span slot="label"><i class="el-icon-date"></i> 月</span>
+                <span slot="label"><i class="el-icon-date"></i> Month</span>
                 <div class="tabBody">
                     <el-row>
-                        <el-radio v-model="month.cronEvery" label="1">每月</el-radio>
+                        <el-radio v-model="month.cronEvery" label="1">Every month</el-radio>
                     </el-row>
                     <el-row>
-                        <el-radio v-model="month.cronEvery" label="2">每隔
-                            <el-input-number size="small" v-model="month.incrementIncrement" :min="0" :max="23"></el-input-number>
-                            月执行&nbsp;从
-                            <el-input-number size="small" v-model="month.incrementStart" :min="0" :max="23"></el-input-number>
-                            月开始
+                        <el-radio v-model="month.cronEvery" label="2">Every
+                            <el-input-number size="small" v-model="month.incrementIncrement" :min="0" :max="12"></el-input-number>
+                            month(s) starting in
+                            <el-input-number size="small" v-model="month.incrementStart" :min="0" :max="12"></el-input-number>
                         </el-radio>
                     </el-row>
                     <el-row>
-                        <el-radio class="long" v-model="month.cronEvery" label="3">具体月份(可多选)
+                        <el-radio class="long" v-model="month.cronEvery" label="3">Specific month (choose one or many)
                             <el-select size="small" multiple v-model="month.specificSpecific">
-                                <el-option v-for="val in 12" :key="$index" :label="val+'月'" :value="val"></el-option>
+                                <el-option v-for="val in 12" :key="$index" :label="val" :value="val"></el-option>
                             </el-select>
                         </el-radio>
                     </el-row>
                     <el-row>
-                        <el-radio v-model="month.cronEvery" label="4">从
-                            <el-input-number size="small" v-model="month.rangeStart" :min="1" :max="12"></el-input-number>月
-                            到
+                        <el-radio v-model="month.cronEvery" label="4">Every month between
+                            <el-input-number size="small" v-model="month.rangeStart" :min="1" :max="12"></el-input-number>
+                            and
                             <el-input-number size="small" v-model="month.rangeEnd" :min="1" :max="12"></el-input-number>
-                            月之间的每个月
                         </el-radio>
                     </el-row>
                 </div>
             </el-tab-pane>
             <el-tab-pane>
-                <span slot="label"><i class="el-icon-date"></i> 年</span>
+                <span slot="label"><i class="el-icon-date"></i> Year</span>
                 <div class="tabBody">
                     <el-row>
-                        <el-radio v-model="year.cronEvery" label="1">每年</el-radio>
+                        <el-radio v-model="year.cronEvery" label="1">Any year</el-radio>
                     </el-row>
                     <el-row>
-                        <el-radio v-model="year.cronEvery" label="2">每隔
+                        <el-radio v-model="year.cronEvery" label="2">Every
                             <el-input-number size="small" v-model="year.incrementIncrement" :min="1" :max="99"></el-input-number>
-                            年执行&nbsp;从
-                            <el-input-number size="small" v-model="year.incrementStart" :min="2017" :max="2117"></el-input-number>
-                            年开始
+                            year(s) starting in
+                            <el-input-number size="small" v-model="year.incrementStart" :min="2018" :max="2118"></el-input-number>
                         </el-radio>
                     </el-row>
                     <el-row>
-                        <el-radio class="long" v-model="year.cronEvery" label="3">具体年份(可多选)
+                        <el-radio class="long" v-model="year.cronEvery" label="3">Specific year (choose one or many)
                             <el-select size="small" filterable multiple v-model="year.specificSpecific">
-                                <el-option v-for="val in 100" :key="$index" :label="2016+val+'年'" :value="2016+val"></el-option>
+                                <el-option v-for="val in 100" :key="$index" :label="2017+val" :value="2017+val"></el-option>
                             </el-select>
                         </el-radio>
                     </el-row>
                     <el-row>
-                        <el-radio v-model="year.cronEvery" label="4">从
-                            <el-input-number size="small" v-model="year.rangeStart"  :min="2017" :max="2117"></el-input-number>年
-                            到
-                            <el-input-number size="small" v-model="year.rangeEnd"  :min="2017" :max="2117"></el-input-number>
-                            年之间的每个年
+                        <el-radio v-model="year.cronEvery" label="4">Every year between
+                            <el-input-number size="small" v-model="year.rangeStart"  :min="2018" :max="2118"></el-input-number>
+                            and
+                            <el-input-number size="small" v-model="year.rangeEnd"  :min="2018" :max="2118"></el-input-number>
                         </el-radio>
                     </el-row>
                 </div>
             </el-tab-pane>
         </el-tabs>
         <div class="btnList">
-            <span class="value">{{this.cron}}</span>&nbsp;&nbsp;
-            <el-button type="primary" @click="change">确定</el-button>
-            <el-button type="primary" @click="close">关闭</el-button>
+            <span class="value">{{this.cron}}</span>
+            <el-button type="primary" @click="change">Save</el-button>
+            <el-button type="primary" @click="close">Close</el-button>
         </div>
     </div>
 </template>
