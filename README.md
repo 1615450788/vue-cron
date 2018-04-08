@@ -35,7 +35,7 @@ export default {
     <div class="cron">
         <h1>vue-cron</h1>
         <el-popover v-model="cronPopover">
-            <cron @change="changeCron" @close="cronPopover=false"></cron>
+            <cron @change="changeCron" @close="cronPopover=false" i18n="en"></cron>
             <el-input slot="reference" @click="cronPopover=true" v-model="cron" placeholder="请输入定时策略"></el-input>
         </el-popover>
     </div>
@@ -62,6 +62,14 @@ export default {
 ```
 
 在示例中我使用了es6(es2015)语法,你可能需要引入babel-polyfill才能正常运行,或者你也可以用es5的写法
+
+## 参数
+
+- i18n
+
+    - 参数 `{String} language` 目前仅支持`en|cn`
+    
+    国际化支持
 
 ## 事件
 - change(cronText)
