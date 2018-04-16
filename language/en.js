@@ -33,7 +33,6 @@ export default {
         beforeEndMonth:['day(s) before the end of the month'],
         nearestWeekday:['Nearest weekday (Monday to Friday) to the','of the month'],
         someWeekday:['On the','of the month'],
-        cycle:['Every day between day','and day']
     },
     Week:['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'],
     Month:{
@@ -45,9 +44,11 @@ export default {
     },
     Year:{
         name:'Year',
-        every:'Every year',
+        every:'Any year',
         interval:['Every','year(s) starting in'],
         specific:'Specific year (choose one or many)',
         cycle:['Every year between','and']
     },
+    Save:'Save',
+    Close:'Close'
 }

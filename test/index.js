@@ -4,8 +4,10 @@ import 'element-ui/lib/theme-chalk/index.css'
 import Test from '../test/test.vue';
 
 Vue.use(ElementUI);
-
-Vue.config.devtools = false;
+const isProd = process.env.NODE_ENV === 'production';
+Vue.config.devtools = !isProd;
+Vue.config.silent = isProd;
+Vue.config.productionTip = false;
 
 const app = new Vue({
     el: '#app',

@@ -49,4 +49,6 @@ export default {
         specific:'具体年份(可多选)',
         cycle:['从','到','年之间的每一年']
     },
+    Save:'保存',
+    Close:'关闭'
 }

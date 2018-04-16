@@ -1,13 +1,13 @@
 {
   "name": "vue-cron",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "",
   "main": "/build/cron.min.js",
   "scripts": {
     "dev": "cooking watch -p -c /config/cooking.dev.js",
     "dist": "cooking build -p -c /config/cooking.dev.js",
     "build": "cooking build -p -c /config/cooking.build.js",
-    "npm": "npm run build && git add . && git commit -m build&& npm version patch && npm publish && git push"
+    "npm": "npm run build && git add . && git commit -m build&& npm version patch && npm publish && git push && git push origin --tags"
   },
   "author": "",
   "license": "ISC",
@@ -22,6 +22,6 @@
     "element-ui": "^2.0.7",
     "vue": "^2.5.9",
     "vue-template-compiler": "^2.5.9",
-    "webpack-node-externals": "^1.6.0"
+    "webpack-node-externals": "^1.7.2"
   }
 }
