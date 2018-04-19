@@ -10,8 +10,24 @@
     "npm": "npm run build && git add . && git commit -m build&& npm version patch && npm publish && git push && git push origin --tags"
   },
   "author": "",
-  "license": "ISC",
-  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:1615450788/vue-cron.git"
+  },
+  "homepage": "https://1615450788.github.io/vue-cron/dist/index",
+  "keywords": [
+    "cron",
+    "vue",
+    "vuecron"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/1615450788/vue-cron/issues"
+  },
+  "dependencies": {
+    "element-ui": "^2.0.7",
+    "vue": "^2.5.9"
+  },
   "devDependencies": {
     "babel-polyfill": "^6.26.0",
     "cooking": "^1.5.4",
@@ -19,8 +35,6 @@
     "cooking-cli": "^1.5.5",
     "cooking-less": "^1.0.5",
     "cooking-vue2": "^0.3.3",
-    "element-ui": "^2.0.7",
-    "vue": "^2.5.9",
     "vue-template-compiler": "^2.5.9",
     "webpack-node-externals": "^1.7.2"
   }
