@@ -1,5 +1,10 @@
 <style lang="less" scoped>
     #changeContab{
+        .language{
+            position: absolute;
+            right: 25px;
+            z-index: 1;
+        }
         .el-tabs{
             box-shadow: none;
         }
@@ -16,22 +21,21 @@
                 }
             }
         }
-        .btnList{
+        .bottom{
             width: 100%;
             text-align: center;
             margin-top: 5px;
             position: relative;
             .value{
-
-                line-height: 36px;
                 font-size: 18px;
-
+                vertical-align: middle;
             }
         }
     }
 </style>
 <template>
     <div id="changeContab">
+        <el-button class="language" type="text" @click="i18n=(i18n==='en'?'cn':'en')">{{i18n}}</el-button>
         <el-tabs type="border-card">
             <el-tab-pane>
                 <span slot="label"><i class="el-icon-date"></i> {{text.Seconds.name}}</span>
@@ -264,7 +268,7 @@
                 </div>
             </el-tab-pane>
         </el-tabs>
-        <div class="btnList">
+        <div class="bottom">
             <span class="value">{{this.cron}}</span>
             <el-button type="primary" @click="change">{{text.Save}}</el-button>
             <el-button type="primary" @click="close">{{text.Close}}</el-button>
@@ -272,7 +276,7 @@
     </div>
 </template>
 <script>
-    import language from '../language/index'
+    import Language from '../language/index'
     export default {
     name:'vueCron',
     props:['data','i18n'],
@@ -355,7 +359,7 @@
     },
     computed: {
         text(){
-            return language[this.i18n||'cn']
+            return Language[this.i18n||'cn']
         },
         secondsText() {
             let seconds = '';
