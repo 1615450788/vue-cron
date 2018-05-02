@@ -29,6 +29,7 @@
     "vue": "^2.5.9"
   },
   "devDependencies": {
+    "hoek": "^5.0.3",
     "babel-polyfill": "^6.26.0",
     "cooking": "^1.5.4",
     "cooking-autoprefixer": "^1.0.0",
