@@ -18,7 +18,7 @@ npm install vue-cron
 import Vue from 'vue'
 import VueCron from 'vue-cron'
 
-Vue.use(VueCron);
+Vue.use(VueCron);//使用方式：<vueCron></vueCron>
 
 //局部引入
 import {cron} from 'vue-cron'
