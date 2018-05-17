@@ -25,12 +25,13 @@
     "url": "https://github.com/1615450788/vue-cron/issues"
   },
   "dependencies": {
+    "babel-runtime": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
     "element-ui": "^2.0.7",
     "vue": "^2.5.9"
   },
   "devDependencies": {
     "hoek": "^5.0.3",
-    "babel-polyfill": "^6.26.0",
     "cooking": "^1.5.4",
     "cooking-autoprefixer": "^1.0.0",
     "cooking-cli": "^1.5.5",
