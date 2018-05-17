@@ -2,7 +2,7 @@
   "name": "vue-cron",
   "version": "1.0.7",
   "description": "",
-  "main": "/build/cron.min.js",
+  "main": "build/cron.min.js",
   "scripts": {
     "dev": "cooking watch -p -c /config/cooking.dev.js",
     "dist": "cooking build -p -c /config/cooking.dev.js",
