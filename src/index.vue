@@ -279,9 +279,18 @@
     import Language from '../language/index'
     export default {
     name:'vueCron',
-    props:['data','i18n'],
+    props:['data','i18n','expression'],
     data(){
         return {
+            exps: [
+                { type: "second", expression: "" },
+                { type: "minute", expression: "" },
+                { type: "hour", expression: "" },
+                { type: "day", expression: "" },
+                { type: "month", expression: "" },
+                { type: "Week", expression: "" },
+                { type: "year", expression: "" },
+            ],
             second:{
                 cronEvery:'',
                 incrementStart:'3',
