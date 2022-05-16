@@ -54,7 +54,7 @@
                     <el-row>
                         <el-radio class="long" v-model="second.cronEvery" label="3">{{text.Seconds.specific}}
                             <el-select size="small" multiple v-model="second.specificSpecific">
-                                <el-option v-for="val in 60" :key="$index" :value="val-1">{{val-1}}</el-option>
+                                <el-option v-for="val in 60" :key="val" :value="val-1">{{val-1}}</el-option>
                             </el-select>
                         </el-radio>
                     </el-row>
@@ -85,7 +85,7 @@
                     <el-row>
                         <el-radio class="long" v-model="minute.cronEvery" label="3">{{text.Minutes.specific}}
                             <el-select size="small" multiple v-model="minute.specificSpecific">
-                                <el-option v-for="val in 60" :key="$index" :value="val-1">{{val-1}}</el-option>
+                                <el-option v-for="val in 60" :key="val" :value="val-1">{{val-1}}</el-option>
                             </el-select>
                         </el-radio>
                     </el-row>
@@ -116,7 +116,7 @@
                     <el-row>
                         <el-radio class="long" v-model="hour.cronEvery" label="3">{{text.Hours.specific}}
                             <el-select size="small" multiple v-model="hour.specificSpecific">
-                                <el-option v-for="val in 24" :key="$index" :value="val-1">{{val-1}}</el-option>
+                                <el-option v-for="val in 24" :key="val" :value="val-1">{{val-1}}</el-option>
                             </el-select>
                         </el-radio>
                     </el-row>
@@ -141,7 +141,7 @@
                             <el-input-number size="small" v-model="week.incrementIncrement" :min="1" :max="7"></el-input-number>
                             {{text.Day.intervalWeek[1]}}
                             <el-select size="small" v-model="week.incrementStart">
-                                <el-option v-for="val in 7" :key="$index" :label="text.Week[val-1]" :value="val"></el-option>
+                                <el-option v-for="val in 7" :key="val" :label="text.Week[val-1]" :value="val"></el-option>
                             </el-select>
                             {{text.Day.intervalWeek[2]}}
                         </el-radio>
@@ -158,7 +158,7 @@
                         <el-radio class="long" v-model="day.cronEvery" label="4">{{text.Day.specificWeek}}
                             <el-select size="small" multiple v-model="week.specificSpecific">
                                 <el-option v-for="val in 7"
-                                           :key="$index"
+                                           :key="val"
                                            :label="text.Week[val-1]"
                                            :value="['SUN','MON','TUE','WED','THU','FRI','SAT'][val-1]"
                                 ></el-option>
@@ -168,7 +168,7 @@
                     <el-row>
                         <el-radio class="long" v-model="day.cronEvery" label="5">{{text.Day.specificDay}}
                             <el-select size="small" multiple v-model="day.specificSpecific">
-                                <el-option v-for="val in 31" :key="$index" :value="val">{{val}}</el-option>
+                                <el-option v-for="val in 31" :key="val" :value="val">{{val}}</el-option>
                             </el-select>
                         </el-radio>
                     </el-row>
@@ -181,7 +181,7 @@
                     <el-row>
                         <el-radio v-model="day.cronEvery" label="8">{{text.Day.lastWeek[0]}}
                             <el-select size="small" v-model="day.cronLastSpecificDomDay">
-                                <el-option v-for="val in 7" :key="$index" :label="text.Week[val-1]" :value="val"></el-option>
+                                <el-option v-for="val in 7" :key="val" :label="text.Week[val-1]" :value="val"></el-option>
                             </el-select>
                             {{text.Day.lastWeek[1]||''}}
                         </el-radio>
@@ -202,7 +202,7 @@
                         <el-radio v-model="day.cronEvery" label="11">{{text.Day.someWeekday[0]}}
                             <el-input-number size="small" v-model="week.cronNthDayNth" :min="1" :max="5"></el-input-number>
                             <el-select size="small" v-model="week.cronNthDayDay">
-                                <el-option v-for="val in 7" :key="$index" :label="text.Week[val-1]" :value="val"></el-option>
+                                <el-option v-for="val in 7" :key="val" :label="text.Week[val-1]" :value="val"></el-option>
                             </el-select>
                             {{text.Day.someWeekday[1]}}
                         </el-radio>
@@ -225,7 +225,7 @@
                     <el-row>
                         <el-radio class="long" v-model="month.cronEvery" label="3">{{text.Month.specific}}
                             <el-select size="small" multiple v-model="month.specificSpecific">
-                                <el-option v-for="val in 12" :key="$index" :label="val" :value="val"></el-option>
+                                <el-option v-for="val in 12" :key="val" :label="val" :value="val"></el-option>
                             </el-select>
                         </el-radio>
                     </el-row>
@@ -254,7 +254,7 @@
                     <el-row>
                         <el-radio class="long" v-model="year.cronEvery" label="3">{{text.Year.specific}}
                             <el-select size="small" filterable multiple v-model="year.specificSpecific">
-                                <el-option v-for="val in 100" :key="$index" :label="2017+val" :value="2017+val"></el-option>
+                                <el-option v-for="val in 100" :key="val" :label="2017+val" :value="2017+val"></el-option>
                             </el-select>
                         </el-radio>
                     </el-row>
@@ -279,9 +279,18 @@
     import Language from '../language/index'
     export default {
     name:'vueCron',
-    props:['data','i18n'],
+    props:['data','i18n','expression'],
     data(){
         return {
+            exps: [
+                { type: "second", expression: "" },
+                { type: "minute", expression: "" },
+                { type: "hour", expression: "" },
+                { type: "day", expression: "" },
+                { type: "month", expression: "" },
+                { type: "Week", expression: "" },
+                { type: "year", expression: "" },
+            ],
             second:{
                 cronEvery:'',
                 incrementStart:'3',
@@ -566,8 +575,106 @@
                     }
                 }
             }
+        },
+         // 反向解析表达式
+        resolveExpression() {
+        if (!this.expression.length) return;
+        let expList = this.expression.split(" ");
+        if (expList.length < 7) {
+            new Error("表达式格式不正确");
         }
+        for (let i = 0; i < expList.length; i++) {
+            this.exps[i].expression = expList[i];
+        }
+        this.exps.forEach((exp) => {
+            this.output[exp.type] = exp.expression;
+            switch (exp.type) {
+            case "year":
+            case "month":
+            case "hour":
+            case "minute":
+            case "second":
+                this.commonParser(this[exp.type], exp.expression);
+                return;
+            case "Week":
+                this.resolveWeek(exp.expression);
+                return;
+            case "day":
+                this.resolveDay(exp.expression);
+                return;
+            }
+        });
+        },
+        // 年，月，时，分，秒
+        commonParser(expressionType, str) {
+            if (str == "*") {
+                this.resolveStar(expressionType);
+            } else if (str.indexOf("-") >= 0) {
+                this.resolveLine(expressionType, str);
+            } else if (str.indexOf("/") >= 0) {
+                this.resolveSlash(expressionType, str);
+            } else {
+                this.resolveComma(expressionType, str);
+            }
+        },
+        resolveWeek(str) {
+            if (str.indexOf("/") >= 0) {
+                this.day.cronEvery = "2";
+                this.resolveSlash(this.week, str);
+            } else if (str.indexOf(",") >= 0) {
+                this.day.cronEvery = "4";
+                this.resolveComma(this.week, str);
+            } else if (str.indexOf("#") >= 0) {
+                this.day.cronEvery = "11";
+                let range = str.split("#");
+                this.Week.cronNthDayDay = range[0];
+                this.Week.cronNthDayNth = range[1];
+            }
+        },
+        resolveDay(str) {
+            if (str == "*") {
+                this.resolveStar(this.day);
+            } else if (str.indexOf("/") >= 0) {
+                this.resolveSlash(this.day, str, "3");
+            } else if (str == "L") {
+                this.day.cronEvery = "6";
+            } else if (str == "LW") {
+                this.day.cronEvery = "7";
+            } else if (/\dL/.test(str)) {
+                this.day.cronEvery = "8";
+                this.day.cronLastSpecificDomDay = Number(str.match(/(\d)L/)[1]);
+            } else if (/L-\d+/.test(str)) {
+                this.day.cronEvery = "9";
+                this.day.cronDaysBeforeEomMinus = Number(str.match(/L-(\d+)/)[1]);
+            } else if (/\d+W/.test(str)) {
+                this.day.cronEvery = "10";
+                this.day.cronDaysNearestWeekday = Number(str.match(/(\d+)W/))[1];
+            } else {
+                this.resolveComma(this.day, str, "5");
+            }
+        },
+        resolveStar(expressionObj, type = "1") {
+            expressionObj.cronEvery = type;
+        },
+        resolveSlash(expressionObj, expression, type = "2") {
+            expressionObj.cronEvery = type;
+            let range = expression.split("/");
+            expressionObj.incrementStart = range[0];
+            expressionObj.incrementIncrement = range[1];
+        },
+        resolveLine(expressionObj, expression, type = "4") {
+            expressionObj.cronEvery = type;
+            let range = expression.split("-");
+            expressionObj.rangeStart = range[0];
+            expressionObj.rangeStart = range[1];
+        },
+        resolveComma(expressionObj, expression, type = "3") {
+            expressionObj.cronEvery = type;
+            expressionObj.specificSpecific = expression.split(",");
+        }
+
     },
     mounted(){
+        this.resolveExpression();
     }
 }</script>
