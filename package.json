@@ -27,7 +27,7 @@
   "dependencies": {
     "babel-runtime": "^6.26.0",
     "babel-polyfill": "^6.26.0",
-    "element-ui": "^2.14.0",
+    "element-ui": "^2.15.8",
     "vue": "^2.6.11"
   },
   "devDependencies": {
